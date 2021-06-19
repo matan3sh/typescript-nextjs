@@ -1,8 +1,18 @@
+interface Person {
+  name: string;
+  age: number;
+}
+
+// type Person = {
+//   name: string,
+//   age: number
+// }
+
 export default function play() {
   const name = 'Matan';
   const age = 31;
 
-  const person = {
+  const person: Person = {
     name: 'John',
     age: 34,
   };
@@ -13,7 +23,7 @@ export default function play() {
     return info;
   }
 
-  function logPersonInfo2(person: { name: string; age: number }) {
+  function logPersonInfo2(person: Person) {
     const info = `Name: ${person.name}, Age: ${person.age}`;
     console.log(info);
     return info;
