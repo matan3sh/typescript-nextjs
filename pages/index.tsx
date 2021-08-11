@@ -1,10 +1,19 @@
-import { useEffect } from 'react';
-import play from '../playground';
+import { InferGetServerSidePropsType } from 'next';
 
-export default function Home() {
-  useEffect(() => {
-    play();
-  }, []);
+const Home = ({
+  products,
+}: InferGetServerSidePropsType<typeof getStaticProps>) => {
+  return <div>{products}</div>;
+};
 
-  return <div>Hello World</div>;
+export async function getStaticProps() {
+  const products = [1, 2, 3];
+  return {
+    props: {
+      products,
+    },
+    revalidate: 4 * 60 * 60,
+  };
 }
+
+export default Home;
