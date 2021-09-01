@@ -2,7 +2,7 @@ import fetchApi from '../utils/fetch-api';
 
 import getAllProductsQuery from '../utils/queries/get-all-products';
 import { normalizeProduct } from '../utils/normalize';
-import { Product } from '../../common/types/product';
+import { Product } from '@common/types/product';
 
 import { ProductConnection } from '../schema';
 
