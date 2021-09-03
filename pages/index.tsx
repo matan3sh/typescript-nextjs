@@ -1,4 +1,5 @@
 import { InferGetServerSidePropsType } from 'next';
+import { getConfig } from '@framework/api/config';
 import getAllProducts from '@framework/product/get-all-products';
 
 const Home = ({
@@ -8,7 +9,9 @@ const Home = ({
 };
 
 export async function getStaticProps() {
-  const products = await getAllProducts();
+  const config = getConfig();
+  const products = await getAllProducts(config);
+
   return {
     props: {
       products,
