@@ -1,5 +1,4 @@
 import { InferGetServerSidePropsType } from 'next';
-
 import getAllProducts from '@framework/product/get-all-products';
 
 const Home = ({
