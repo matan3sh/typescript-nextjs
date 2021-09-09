@@ -1,4 +1,5 @@
 import { InferGetServerSidePropsType } from 'next';
+
 import { getConfig } from '@framework/api/config';
 import getAllProducts from '@framework/product/get-all-products';
 
