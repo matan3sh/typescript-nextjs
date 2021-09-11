@@ -8,7 +8,7 @@ const Home = ({
   products,
 }: InferGetServerSidePropsType<typeof getStaticProps>) => {
   return (
-    <div>
+    <div className='root'>
       <span>{JSON.stringify(products)}</span>
     </div>
   );
