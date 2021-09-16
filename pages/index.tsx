@@ -2,6 +2,7 @@ import { InferGetServerSidePropsType } from 'next';
 import { getConfig } from '@framework/api/config';
 import getAllProducts from '@framework/product/get-all-products';
 
+import { ProductCard } from '@components/product';
 import { Layout } from '@components/common';
 
 const Home = ({
@@ -9,7 +10,9 @@ const Home = ({
 }: InferGetServerSidePropsType<typeof getStaticProps>) => {
   return (
     <div>
-      <span>{JSON.stringify(products)}</span>
+      {products.slice(0, 3).map((product) => (
+        <ProductCard key={product.id.toString()} product={product} />
+      ))}
     </div>
   );
 };
