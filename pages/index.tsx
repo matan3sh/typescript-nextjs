@@ -4,16 +4,19 @@ import getAllProducts from '@framework/product/get-all-products';
 
 import { ProductCard } from '@components/product';
 import { Layout } from '@components/common';
+import { Grid } from '@components/ui';
 
 const Home = ({
   products,
 }: InferGetServerSidePropsType<typeof getStaticProps>) => {
   return (
-    <div>
-      {products.slice(0, 3).map((product) => (
-        <ProductCard key={product.id.toString()} product={product} />
-      ))}
-    </div>
+    <>
+      <Grid>
+        {products.slice(0, 3).map((product) => (
+          <ProductCard key={product.id.toString()} product={product} />
+        ))}
+      </Grid>
+    </>
   );
 };
 
