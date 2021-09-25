@@ -22,7 +22,7 @@ const ProductCard: FC<Props> = ({ product }) => {
         {product.images && (
           <Image
             alt={product.name.toString() ?? 'Product Image'}
-            src={placeholderImage}
+            src={product.images[0].url.toString() ?? placeholderImage}
             height={540}
             width={540}
             quality='85'
