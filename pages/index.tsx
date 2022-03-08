@@ -1,10 +1,10 @@
-import { InferGetServerSidePropsType } from 'next';
-import { getConfig } from '@framework/api/config';
-import getAllProducts from '@framework/product/get-all-products';
+import { InferGetServerSidePropsType } from "next";
+import { getConfig } from "@framework/api/config";
+import getAllProducts from "@framework/product/get-all-products";
 
-import { ProductCard } from '@components/product';
-import { Layout } from '@components/common';
-import { Grid } from '@components/ui';
+import { ProductCard } from "@components/product";
+import { Layout } from "@components/common";
+import { Grid, Hero } from "@components/ui";
 
 const Home = ({
   products,
@@ -16,6 +16,10 @@ const Home = ({
           <ProductCard key={product.id.toString()} product={product} />
         ))}
       </Grid>
+      <Hero
+        headline="Cookies, ice cream and muffin"
+        description="Carrot cake pastry marshmallow lemon drops shortbread ice cream chocolate bar chocolate bar. Cookie muffin chocolate bonbon shortbread. Chocolate cake tart tootsie roll soufflé lemon drops. Dessert fruitcake brownie muffin chocolate cake toffee candy. Toffee soufflé oat cake topping jelly bonbon. Gummies liquorice shortbread sesame snaps cake fruitcake fruitcake icing tootsie roll. Pudding candy pie cookie pie marshmallow dessert jujubes."
+      />
     </>
   );
 };
