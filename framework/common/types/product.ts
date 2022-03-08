@@ -3,6 +3,11 @@ export interface ProductImage {
   alt?: String;
 }
 
+export interface ProductPrice {
+  value: number;
+  currencyCode: "USD" | "EUR" | string;
+}
+
 export interface Product {
   id: String;
   name: String;
@@ -10,4 +15,5 @@ export interface Product {
   slug: String;
   path: String;
   images: ProductImage[];
+  price: ProductPrice;
 }
